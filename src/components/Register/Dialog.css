@@ -1,0 +1,9 @@
+.wrapper {
+    height: 70vh;
+    /* This part is important for centering the content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* End center */
+  }
+  
