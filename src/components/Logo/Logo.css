@@ -4,9 +4,32 @@
     justify-content: center;
     height: 150px;
     width: 150px;
-    background: linear-gradient(90deg, rgba(58,180,160,1) 0%, rgba(29,160,253,1) 50%, rgba(69,252,207,1) 100%); ;
+    background: transparent;
 }
 
-img {
+
+.logo {
     scale: 1.1;
+}
+
+.logoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h3 {
+    margin: 0;
+}
+
+.icons {
+    font-size: 25px;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin: 20px;
+}
+
+a {
+    color: black;
 }

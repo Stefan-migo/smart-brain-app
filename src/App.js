@@ -51,21 +51,50 @@ loadUser = (data) => {
 
 // function to calculate the face's location points, 
   calculateFaceLocation = (data) => {
-    const clarifiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
+    // console.log(data.outputs[0].data.regions[0].region_info.bounding_box);
+    // console.log(data.outputs[0].data.regions.map((item) => {
+    //   return (item.region_info.bounding_box);
+    // }));
+
+
+    const clarifitest = data.outputs[0].data.regions.map((item) => {
+      return (item.region_info.bounding_box);
+    })
+    // console.log(clarifitest.map((item) => {
+    //   return {
+    //     leftCol: item.left_col,
+    //     topRow: item.top_row,
+    //     rightCol: item.right_col,
+    //     bottomRow: item.bottom_row
+    //   }
+
+    // }))
+
+    // const clarifiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
     const image= document.getElementById('inputImage');
     const width = Number(image.width);
     const height = Number(image.height);
     
-    return {
-      leftCol: clarifiFace.left_col * width,
-      topRow: clarifiFace.top_row * height,
-      rightCol: width - (clarifiFace.right_col * width),
-      bottomRow: height - (clarifiFace.bottom_row * height),
-    };
+    return (
+      clarifitest.map((item) => {
+        return {
+          leftCol: item.left_col * width,
+          topRow: item.top_row * height,
+          rightCol: width - (item.right_col * width),
+          bottomRow: height - (item.bottom_row * height)
+      }})
+
+
+      // leftCol: clarifiFace.left_col * width,
+      // topRow: clarifiFace.top_row * height,
+      // rightCol: width - (clarifiFace.right_col * width),
+      // bottomRow: height - (clarifiFace.bottom_row * height),
+    );
 
   }
   
   displayFaceBox = (box) => {
+    console.log('box console', box)
     this.setState({box: box});
   }
 
@@ -74,6 +103,9 @@ loadUser = (data) => {
   } 
   
   onPictureSubmit = () => {
+    if(this.state.imageUrl){
+      this.setState({imageUrl: initialState.imageUrl})
+    }
     this.setState({imageUrl: this.state.input});
     fetch('https://smart-brain-server.onrender.com/imageurl', {
       method: 'post',
@@ -121,8 +153,11 @@ render() {
         onRouteChange={this.onRouteChange}
       />
       { route === 'home' //it makes isSignedIn true and it will return:
-      ? <div>
+      ? <div className='mainBox'>
+          <div className='logoWrapper'>
           <Logo />
+          </div>
+          <div>
           <Rank 
           entries={user.entries}
           name={user.name}/>
@@ -133,6 +168,7 @@ render() {
             imageUrl={imageUrl}
             box={box}
             />
+          </div>
         </div>
       : (
         route === 'signin'
