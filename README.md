@@ -9,7 +9,7 @@ https://smart-brain-app.onrender.com
 Use the package manager [git](https://git-scm.com) to clone the repository.
 
 ```bash
-# git clone https://github.com/Stefan-migo/ecommerce_sanity_stripe.git
+# https://github.com/Stefan-migo/smart-brain-app.git
 ```
 
 ## Usage
