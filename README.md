@@ -22,7 +22,6 @@ Even though this is just a project, as you can see, it works as part of my perso
 
 you can create your own user an try the app.
 
-this 
 
 ## Contributing
  
