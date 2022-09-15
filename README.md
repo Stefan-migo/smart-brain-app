@@ -1,6 +1,6 @@
 # Smart Brain App
 
-Smart Brain App is a face detection web app that works on top of React.js, Node.js and PostgreSQL hosted on elephantSQL technologies 
+Smart Brain App is a face detection web app that works on top of React.js, Node.js and PostgreSQL technologies hosted on elephantSQL.com and Render.com  
 if you want to check a live version of this repository click the following link: 
 https://smart-brain-app.onrender.com
 
