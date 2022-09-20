@@ -16,8 +16,8 @@ const Logo = () => {
                 <h3>Stefan Miranda</h3>
             </div>
             <p className="icons">
-                    <a href='https://github.com/Stefan-migo' target="_blank"><AiFillInstagram /></a>
-                    <a href='https://www.instagram.com/leberland/' target="_blank"><AiOutlineGithub /></a>
+                    <a href='https://www.instagram.com/leberland/' target="_blank"><AiFillInstagram /></a>
+                    <a href='https://github.com/Stefan-migo' target="_blank"><AiOutlineGithub /></a>
                     <a href='https://www.linkedin.com/in/stefan-miranda-gonzalez-787387118/' target="_blank"><AiOutlineLinkedin /></a>
             </p>
 
